@@ -170,17 +170,19 @@ def calculate_wisdom(n):
 					rtmat = 2 * np.dot(ri, li)
 					if np.array_equal(tmat, idt_mat) and np.array_equal(rtmat, idt_mat):
 						# print("EQ satisfied\n", tmat, idt_mat)
-						print("EQ 2.4a satisfied for I = J ",i,j)
-					else:
+						# print("EQ 2.4a satisfied for I = J ",i,j)
 						pass
-						# print("EQ 2.4a failed", i, j)
+					else:
+						# pass
+						print("EQ 2.4a failed", i, j)
+						sys.exit("FAILURE")
 			elif i != j:
 				tmat = np.dot(li,rj) + np.dot(lj,ri)
 				rtmat = np.dot(ri,lj) + np.dot(rj,li)
 				if np.count_nonzero(rtmat) == 0 and np.count_nonzero(tmat) == 0:
 				# if np.count_nonzero(rtmat) == 0:
 					if np.array_equal(ri, inv(li)) and np.array_equal(rj, inv(lj)):
-						print("EQ 2.4d satisfied", i, j)
+						# print("EQ 2.4d satisfied", i, j)
 						# packing away all the 12 matching matrices
 						temp_m.append([j,lj])
 						# print("Matching I J pair: ",i,j)
@@ -188,9 +190,9 @@ def calculate_wisdom(n):
 					else:
 						pass
 						# print("EQ 2.4d failed", i ,j)
-				else:
-					""" Making sure the outputs make sense """
-					pass
+				# else:
+				# 	""" Testing purposes """
+				# 	pass
 					# temp_tst.append([j,lj])
 					# print("EQ 2.4b, 2.4c failed", i, j)
 
@@ -236,7 +238,9 @@ def calculate_wisdom(n):
 	print("Total number of unique tetrad permutations:", len(main_tetrad))
 
 	# pie_slicing(main_tetrad)
-	# vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
+	""" vij_holoraumy_calc proceeds to calculate all the corresponding Vij
+		matrices for 36864 unique Adinkra tetrads							"""
+	vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
 
 # ******************************************************************************
 # Calculate all matches per a 12 match group.
@@ -287,8 +291,8 @@ def build_four_pillars(zeropt_mat, doz_mats):
 				if np.count_nonzero(rtmat) == 0:
 					if np.array_equal(ri, inv(matli)) and np.array_equal(rj, inv(matlj)):
 						ark_12of4_pairs[str(num_li)].append(num_lj)
-						print("Matching I J pair: ",num_li,num_lj)
-					# if (ri==inv(matli)).all() and (rj==inv(matlj)).all():
+						# print("Matching I J pair: ",num_li,num_lj)
+					# if (ri==i1nv(matli)).all() and (rj==inv(matlj)).all():
 						# temp_check.append((matli,matlj))
 				elif np.count_nonzero(rtmat) != 0:
 					pass
