@@ -1,17 +1,16 @@
-# ******************************************************************************
+# **************************************************
 # Name:    Adinkra BC4 Python Code description
 # Author:  Vadim Korotkikh
-# Email:   va.korotki@gmail.com
-# Date:    January 2017
-# Version: 1.0
-#
-# Description: Readme for the multiple python scripts that enable the calculation
-# of all all unique 36,864 ordered BC4-based adinkras with four colors, four 
-# open-nodes and four closed nodes and then calculates the Vij holoraumy matrices 
-# and the 1,358,954,496 Matrix elements of the Gadget
-#
-# ******************************************************************************.
+Email:   va.korotki@gmail.com
+Date:    January 2017
+Version: 1.0
 
+Description: Readme for the multiple python scripts that enable the calculation
+of all all unique 36,864 ordered BC4-based adinkras with four colors, four 
+open-nodes and four closed nodes and then calculates the Vij holoraumy matrices 
+and the 1,358,954,496 Matrix elements of the Gadget
+
+**************************************************
 # Initial Description:
 
 Primary script: adinkra_tetrad_calc.py - Calculates the 36,864 ordered BC4-based
