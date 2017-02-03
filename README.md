@@ -1,7 +1,7 @@
 ************************************
 # Name:    Adinkra BC4 Python Code description
 Author:  Vadim Korotkikh
-Email:   va.korotki@gmail.com
+  Email:   va.korotki@gmail.com
 
 Date:    January 2017
 Version: 1.0
