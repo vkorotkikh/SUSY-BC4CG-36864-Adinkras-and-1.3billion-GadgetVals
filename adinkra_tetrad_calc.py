@@ -64,8 +64,8 @@ def calculate_wisdom(n):
 	sign_pmat = gen_signm(n)
 	uperm_mat = gen_dpermut_mat()
 
-	duplik_one		= []
-	duplik_extras	= []
+	# duplik_one		= []
+	# duplik_extras	= []
 
 	for x in sign_pmat:
 		t1 = np.asmatrix(x)
@@ -75,14 +75,13 @@ def calculate_wisdom(n):
 			dprod2 = np.matmul(t1,t2)
 			if np.array_equal(dprod, dprod2):
 				res.append(dprod)
-				if duplik_one:
-					if [mx for mx in duplik_one if np.array_equal(dprod, mx)]:
-						duplik_extras.append(dprod)
-					else:
-						duplik_one.append(dprod)
-				else:
-					duplik_one.append(dprod)
-
+				# if duplik_one:
+				# 	if [mx for mx in duplik_one if np.array_equal(dprod, mx)]:
+				# 		duplik_extras.append(dprod)
+				# 	else:
+				# 		duplik_one.append(dprod)
+				# else:
+				# 	duplik_one.append(dprod)
 				sigflip = np.multiply(dprod, -1)
 				trnpmat = np.transpose(dprod)
 				if calc_check:
@@ -92,6 +91,8 @@ def calculate_wisdom(n):
 						calc_check.append(dprod)
 				else:
 					calc_check.append(dprod)
+
+	self_inverse	= []
 
 	for i, im in enumerate(res):
 		invsmat = inv(im)
@@ -122,9 +123,9 @@ def calculate_wisdom(n):
 						pass
 
 	print("Finishing building 384 matrices")
-	print("Checking for duplicates in 384")
-	print("Number of unique matrices:", len(duplik_one))
-	print("Number of duplicate matrices:", len(duplik_extras))
+	# print("Checking for duplicates in 384")
+	# print("Number of unique matrices:", len(duplik_one))
+	# print("Number of duplicate matrices:", len(duplik_extras))
 	print("Sign flips removed")
 	print("Number of sign-flipped matrices:", len(calc_check))
 
@@ -230,9 +231,6 @@ def calculate_wisdom(n):
 				new_tet.append(temp_tup)
 		# print(new_tet)
 		main_tetrad.append(new_tet)
-	# main_tetrad9
-	print("main_tetrad:", main_tetrad[0])
-	print(main_tetrad[1])
 	# mtetrad_size = sys.getsizeof(main_tetrad)
 	# print("Size of main_tetrads list: bytes / kilobytes:", mtetrad_size, mtetrad_size/1024)
 	print("Total number of unique tetrad permutations:", len(main_tetrad))
@@ -326,8 +324,6 @@ def build_four_pillars(zeropt_mat, doz_mats):
 			# print(key, oneof4, ixpairs)
 			lt = []
 			for m in ixpairs:
-				# lt = []
-				# print(key, oneof4, temp_tri)
 				lt.extend(temp_tri)
 				lt.append(m)
 				lt.sort()
@@ -348,9 +344,7 @@ def build_four_pillars(zeropt_mat, doz_mats):
 			""" Wipe the temp_tri for next matrices in the four_pairs """
 			temp_tri = []
 			# print("Number of unique tetrads:", len(tetnum_list))
-	print(len(tetnum_list))
-	# for mx in tetnum_list:
-		# print(mx)
+	# print(len(tetnum_list))
 	return tetnum_list
 
 # ******************************************************************************
