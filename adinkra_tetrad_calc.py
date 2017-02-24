@@ -25,8 +25,8 @@ import time
 
 # ******************************************************************************
 # Function Imports
-import alpha_beta_4x4
 import vij_holoraumy_calc
+
 
 # ******************************************************************************
 # Main() function.
@@ -108,8 +108,6 @@ def calculate_wisdom(n):
 					temp.sort()
 					if temp not in invs_check:
 						invs_check.append(temp)
-						# print("INVERSE")
-						# print("i j", i, j)
 					else:
 						pass
 				if np.array_equal(trnpmat, jm):
@@ -117,8 +115,6 @@ def calculate_wisdom(n):
 					temp.sort()
 					if temp not in trnp_check:
 						trnp_check.append(temp)
-						# print("TRANSPOSE")
-						# print("i j", i, j)
 					else:
 						pass
 
@@ -207,12 +203,11 @@ def calculate_wisdom(n):
 		new_tets = [x for x in temp_i_tetrad if x not in numonly_tetrads]
 		numonly_tetrads.extend(new_tets)
 
-		print("Break point for new i:", i)
+		# print("Break point for new i:", i)
 		print("Number of pair matrices:",len(temp_m))
 		print("Length of numonly_tetrads list:", len(numonly_tetrads))
 		# print("Number of sign-reduced matrices:", len(temp_tst))
 		print(" 	<<>>	\n")
-		temp = []
 		temp_m = []
 		# temp_tst = []
 
@@ -238,14 +233,13 @@ def calculate_wisdom(n):
 	# pie_slicing(main_tetrad)
 	""" vij_holoraumy_calc proceeds to calculate all the corresponding Vij
 		matrices for 36864 unique Adinkra tetrads							"""
-	vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
+	# vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
 
 # ******************************************************************************
 # Calculate all matches per a 12 match group.
 def build_four_pillars(zeropt_mat, doz_mats):
 
 	idt_mat = 2 * np.matlib.identity(4, dtype=int)
-	bakers_doz = doz_mats
 
 	pt0_mat = zeropt_mat[1]
 	pt0_mnum = zeropt_mat[0]
@@ -259,16 +253,14 @@ def build_four_pillars(zeropt_mat, doz_mats):
 	"""
 	ark_12of4_pairs = {}
 
-	for i, li in enumerate(bakers_doz):
-		# temp = []
-		temp_check = []
+	for i, li in enumerate(doz_mats):
 		num_li = li[0]
 		matli = li[1]
 		if (num_li) not in ark_12of4_pairs:
 			ark_12of4_pairs['%i' % num_li] = []
 
-		print("Finding pairs within the 12 matrices, i = ",num_li)
-		for j, lj in enumerate(bakers_doz):
+		# print("Finding pairs within the 12 matrices, i = ",num_li)
+		for j, lj in enumerate(doz_mats):
 			matlj = lj[1]
 			num_lj = lj[0]
 			ri = np.transpose(matli)
@@ -287,11 +279,9 @@ def build_four_pillars(zeropt_mat, doz_mats):
 				tmat = np.dot(matli,rj) + np.dot(matlj,ri)
 				rtmat = np.dot(ri,matlj) + np.dot(rj,matli)
 				if np.count_nonzero(rtmat) == 0:
-					if np.array_equal(ri, inv(matli)) and np.array_equal(rj, inv(matlj)):
+					if np.array_equal(ri, inv(matli)):
+					# if np.array_equal(ri, inv(matli)) and np.array_equal(rj, inv(matlj)):
 						ark_12of4_pairs[str(num_li)].append(num_lj)
-						# print("Matching I J pair: ",num_li,num_lj)
-					# if (ri==i1nv(matli)).all() and (rj==inv(matlj)).all():
-						# temp_check.append((matli,matlj))
 				elif np.count_nonzero(rtmat) != 0:
 					pass
 					# print("Not matching I J pair: ",num_li,num_lj)
@@ -299,14 +289,14 @@ def build_four_pillars(zeropt_mat, doz_mats):
 	for key, four_pairs in ark_12of4_pairs.items():
 		""" Hold 3 matrix numbers """
 		temp_tri = []
-		print("Building tetrad combinations")
-		print(pt0_mnum, key, four_pairs)
+		# print("Building tetrad combinations")
+		# print(pt0_mnum, key, four_pairs)
 		# Temp list for storing local tetrads for each of ix pairs.
 		local_tetrad = []
 		for oneof4 in four_pairs:
 			temp_tri.append((pt0_mnum))
 			temp_tri.append(int(key))
-			# temp_tri.append((int(key),bakers_doz[int(key)-1][0]))
+			# temp_tri.append((int(key),doz_mats[int(key)-1][0]))
 			i_4temp = ark_12of4_pairs[str(oneof4)]
 			# print("Matching pairs for i:", oneof4, i_4temp)
 			s = set(four_pairs)

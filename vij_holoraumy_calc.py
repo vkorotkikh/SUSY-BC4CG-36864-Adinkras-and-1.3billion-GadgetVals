@@ -148,12 +148,10 @@ def calculate_vij_matrices(main_tetrad_list):
 									print("Anomaly found:",i,j)
 									print(temp_mat)
 									anomaly_switch = 1
-
 					tf_bool = 0
 
 		vij_matrices.append(temp_vijmat)
 		calc_check.append(vij_tempset)
-
 
 		if alpha_temp:
 			vij_alphas.append(alpha_temp)
