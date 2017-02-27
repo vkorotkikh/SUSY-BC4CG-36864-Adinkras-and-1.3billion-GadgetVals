@@ -85,7 +85,7 @@ def make_adinkras(k, legal_matrices):
 	if k == 1:
 		return [list(l) for l in legal_matrices]
 	else:
-		biglist = []
+		adinkra_list = []
 		print("Length lmats", len(legal_matrices))
 
 		for i, mat in enumerate(legal_matrices):			# Find all matrix pairs for mat
@@ -102,27 +102,13 @@ def make_adinkras(k, legal_matrices):
 				for xval in fourpack:
 					for lastx in [nmat for nmat in fourpack if pairing(xval[1], nmat[1])]:
 						# temp = [(i,mat), val, xval, lastx]
-						# temp = [i, val[0], xval[0], lastx[0]]
-						biglist.append([(i,mat), val, xval, lastx])
-			# for im in good_mats:
-			# for m in good_mats:
-			# 	good_mats_redux = [mx for mx in good_mats if pairing(m,mx)]
-			# 	print("Redux", len(good_mats_redux))
-			# 	for rm in good_mats_redux:
-			# 		flist = [rx for rx in good_mats_redux if pairing(rm, rx)]
-			# 		print("flist:", len(flist))
-			# print(len(good_mats))
-			# biglist  += [[mat]+mlist for mlist in make_adinkras(k-1, good_mats)]
-			# print("biglist", i)
-		return biglist
+						adinkra_list.append([(i,mat), val, xval, lastx])
+		return adinkra_list
 
 
 # ****************
 def makeall_adinkras(k):
 
-	# test_list = gen_product_matrices(k)
-	# print(len(test_list))
-	# return make_matrices(n, gen_product_matrices(n))
 	main_tetrad = make_adinkras(k, gen_product_matrices(k))
 	print(len(main_tetrad))
 	# for i in range(50):
