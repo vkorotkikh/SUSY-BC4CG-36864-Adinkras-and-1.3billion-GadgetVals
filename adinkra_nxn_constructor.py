@@ -30,14 +30,13 @@ def gen_permutations(n):
 
 # Generate all sign permutations of an nxn Identity Matrix
 def gen_signm(n):
-	n 		= int(n)
-	items	= [1] * n
+	items	= [1] * int(n)
 	# itemsl = np.ones(n)
 	# items = itemsl.tolist()
     # n   = int(n)
     # items = [1] * n
 	sign_mat = []
-	for signs in itertools.product([-1,1], repeat=len(items)):
+	for signs in itertools.product([-1,1], repeat=n):
 		temp = np.array([a*sign for a,sign in zip(items,signs)],dtype=int)
 		# ptemp.append(temp)
 		sign_mat.append(np.diag(temp))
@@ -64,7 +63,6 @@ def pairing(matli, matlj):
 	# sig_lj =  np.multiply(matlj, -1)
 	# tmat = np.dot(matli,rj) + np.dot(matlj,ri)
 	rtmat = np.dot(ri,matlj) + np.dot(rj,matli)
-
 	# if np.array_equal(ri, inv(matli)) and np.array_equal(rj, inv(matlj)):
 	return (np.count_nonzero(rtmat) == 0)
 
@@ -85,16 +83,15 @@ def make_adinkras(k, legal_matrices):
 	if k == 1:
 		return [list(l) for l in legal_matrices]
 	else:
-		adinkra_list = []
+		# adinkra_list = [None] * 36864
+		adinkra_list	= []
 		print("Length lmats", len(legal_matrices))
 
 		for i, mat in enumerate(legal_matrices):			# Find all matrix pairs for mat
 			# good_mats = [m for m in legal_matrices if pairing(mat,m)]
-
 			# test_mats = [ind[0] for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]
 			xtest_pack = [ind for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]
 			# main_list[i] = xtest_pack
-
 			for val in xtest_pack:
 				# main_list[val[0]] = [(i,mat)]
 				fourpack	= [nmat for nmat in xtest_pack if pairing(val[1], nmat[1])]
@@ -111,9 +108,9 @@ def makeall_adinkras(k):
 
 	main_tetrad = make_adinkras(k, gen_product_matrices(k))
 	print(len(main_tetrad))
-	# for i in range(50):
-	# 	print("<>")
-	# 	print(main_tetrad[i])
+	# for i in main_tetrad:
+	# 	print(i)
+
 
 # ****************
 # Run main()
