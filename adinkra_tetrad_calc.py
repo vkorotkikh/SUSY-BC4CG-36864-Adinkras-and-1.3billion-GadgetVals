@@ -62,7 +62,7 @@ def calculate_wisdom(n):
 	trnp_check = []
 
 	sign_pmat = gen_signm(n)
-	uperm_mat = gen_dpermut_mat()
+	uperm_mat = gen_dpermut_mat(n)
 
 	# duplik_one		= []
 	# duplik_extras	= []
@@ -387,8 +387,7 @@ def pie_slicing(big_list_oftetrads):
 # ******************************************************************************
 # Generate all sign permutations of an nxn Identity Matrix
 def gen_signm(n):
-	# itemsl = np.ones(n)
-	# items = itemsl.tolist()
+
 	items = [1] * 4
 
 	# ptemp = []
@@ -398,16 +397,12 @@ def gen_signm(n):
 		# ptemp.append(temp)
 		sign_mat.append(np.diag(temp))
 
-	# for x in ptemp:
-	# 	temp = np.diag(x)
-	# 	sign_mat.append(temp)
+	# with open('sign_permutation_matrices.txt', 'w') as outfile:
+	# 	for smat in sign_mat:
+	# 		# outfile.write(smat.astype(str))
+	# 		outfile.write(np.array_str(smat))
+	# 		outfile.write("\n")
 
-	with open('sign_permutation_matrices.txt', 'w') as outfile:
-		for smat in sign_mat:
-			# outfile.write(smat.astype(str))
-			outfile.write(np.array_str(smat))
-			outfile.write("\n")
-			outfile.write("\n")
 	return sign_mat
 
 
@@ -426,11 +421,9 @@ def plusAndMinusPermutations(items):
 
 # ******************************************************************************
 # Function for nxn matrices, P(l) - matrix rep. of permutation matrices
-def gen_dpermut_mat():
+def gen_dpermut_mat(n):
 
-	n = 4
 	temp = []
-
 	# perm_rep_list = list(itertools.permutations([0,1,2,3],4))
 	perm_rep_list = list(itertools.permutations(range(n), n))
 	t1 = np.array((1,0,0,0))
