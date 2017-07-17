@@ -85,8 +85,7 @@ def make_adinkras(k, legal_matrices):
 	else:
 		# adinkra_list = [None] * 36864
 		adinkra_list	= []
-		print("Length lmats", len(legal_matrices))
-
+		
 		for i, mat in enumerate(legal_matrices):			# Find all matrix pairs for mat
 			# good_mats = [m for m in legal_matrices if pairing(mat,m)]
 			# test_mats = [ind[0] for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]

@@ -233,7 +233,7 @@ def calculate_wisdom(n):
 	# pie_slicing(main_tetrad)
 	""" vij_holoraumy_calc proceeds to calculate all the corresponding Vij
 		matrices for 36864 unique Adinkra tetrads							"""
-	# vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
+	vij_holoraumy_calc.calculate_vij_matrices(main_tetrad)
 
 # ******************************************************************************
 # Calculate all matches per a 12 match group.
@@ -427,11 +427,12 @@ def plusAndMinusPermutations(items):
 # ******************************************************************************
 # Function for nxn matrices, P(l) - matrix rep. of permutation matrices
 def gen_dpermut_mat():
+
+	n = 4
 	temp = []
 
-	# perm_rep_list = list(itertools.permutations([0,1,2,3,4,5,6,7,8,9,10,11],4))
-	perm_rep_list = list(itertools.permutations([0,1,2,3],4))
-	# t1 = np.array((1,0,0,0))
+	# perm_rep_list = list(itertools.permutations([0,1,2,3],4))
+	perm_rep_list = list(itertools.permutations(range(n), n))
 	t1 = np.array((1,0,0,0))
 	t2 = np.array((0,1,0,0))
 	t3 = np.array((0,0,1,0))
@@ -442,20 +443,12 @@ def gen_dpermut_mat():
 		matint = temp_mat.astype(int)
 		temp.append(matint)
 
-	newlist = []
-	for i in temp:
-		if not any(np.array_equal(i, xmat) for xmat in newlist):
-			newlist.append(i)
+	# with open('dxd_permutation_matrices.txt', 'w') as outfile:
+	# 	for pmat in temp:
+	# 		outfile.write(np.array_str(pmat))
+	# 		outfile.write("\n")
+	# 		outfile.write("\n")
 
-	with open('dxd_permutation_matrices.txt', 'w') as outfile:
-		for pmat in temp:
-			# outfile.write(smat.astype(str))
-			outfile.write(np.array_str(pmat))
-			outfile.write("\n")
-			outfile.write("\n")
-	# for i, x in enumerate(newlist):
-	# 	print(i, x, "\n")
-	# print(len(newlist))
 	return(temp)
 
 # ******************************************************************************
