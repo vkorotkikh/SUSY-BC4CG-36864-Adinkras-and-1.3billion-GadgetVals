@@ -1,6 +1,5 @@
 # ******************************************************************************
-#
-# Name:    Outer Product calculation
+# Name:    Hardcoded Alpha & Beta matrices - times 2i
 # Author:  Vadim Korotkikh
 # Email:   Vadim.Korotkikh
 # Date:    November 2016
@@ -13,11 +12,9 @@
 
 # ******************************************************************************
 # Begin Imports
-import math
-import sys
+import sys, math, itertools
 import numpy as np
 import numpy.matlib
-import itertools
 from numpy import array
 
 def main():
@@ -64,7 +61,7 @@ def illuminator_of_elfes():
 
 	abperm_comb = [alpha1i, alpha2i, alpha3i, beta1i, beta2i, beta3i]
 	return abperm_comb
-	
+
 
 # ******************************************************************************
 # Calculate all the possible +1 and -1 l coefficient combinations
