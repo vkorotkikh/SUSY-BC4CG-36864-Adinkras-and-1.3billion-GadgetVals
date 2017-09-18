@@ -76,7 +76,7 @@ def make_adinkras(k, legal_matrices):
 	"""
 	# main_list	= [[] for i in range(len(legal_matrices))]
 	# print(len(main_list))
-	""" Preallocate lists """
+	""" Define common used lists and their size for speed. """
 	xtest_pack	= [None] * 12
 	fourpack	= [None] * 4
 
@@ -85,7 +85,7 @@ def make_adinkras(k, legal_matrices):
 	else:
 		# adinkra_list = [None] * 36864
 		adinkra_list	= []
-		
+
 		for i, mat in enumerate(legal_matrices):			# Find all matrix pairs for mat
 			# good_mats = [m for m in legal_matrices if pairing(mat,m)]
 			# test_mats = [ind[0] for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]
@@ -107,9 +107,6 @@ def makeall_adinkras(k):
 
 	main_tetrad = make_adinkras(k, gen_product_matrices(k))
 	print(len(main_tetrad))
-	# for i in main_tetrad:
-	# 	print(i)
-
 
 # ****************
 # Run main()
