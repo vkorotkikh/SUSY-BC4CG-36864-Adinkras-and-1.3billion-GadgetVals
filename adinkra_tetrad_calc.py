@@ -14,14 +14,12 @@
 
 # ******************************************************************************
 # Library Imports
-import math
-import sys
+import sys, math, time
 import numpy as np
 import numpy.matlib
 import itertools
 from numpy import array
 from numpy.linalg import inv
-import time
 
 # ******************************************************************************
 # Function Imports

@@ -64,12 +64,7 @@ def illuminator_of_elfes():
 
 	abperm_comb = [alpha1i, alpha2i, alpha3i, beta1i, beta2i, beta3i]
 	return abperm_comb
-
-# ******************************************************************************
-# alpha & beta calculation
-def verify_alphas():
-	pass
-
+	
 
 # ******************************************************************************
 # Calculate all the possible +1 and -1 l coefficient combinations

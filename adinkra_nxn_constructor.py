@@ -1,13 +1,12 @@
 # ******************************************************************************
-# Name:    Testing
+# Name:    Faster way of computing all BC4 Adinkras
 # Author:  Vadim Korotkikh
 # Email:   va.korotki@gmail.com
 
-from numpy.linalg import inv
+import sys, time itertools
 import numpy as np
-import itertools
-import time
-import sys
+from numpy.linalg import inv
+
 
 # Makes colums/rows that compose an Identity matrix
 def unit_vector(n,i):
