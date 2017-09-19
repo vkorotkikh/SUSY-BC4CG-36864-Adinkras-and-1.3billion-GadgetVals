@@ -22,11 +22,12 @@ class AdinkraSet():
 	def adinkra_clsmethod(cls):
 		print("Class Name: %s" % cls.__name__)
 
-	def __init__(self, arg, args):
-		self.arg = arg
+	def __init__(self, dim, nodes):
+
+		self.dim = dim
+		self.nodes = nodes
 
 
 	def rand_inst_method(self):		# class instance method
 		# what will this do?
-
-		return self.arg
+		return self.dim

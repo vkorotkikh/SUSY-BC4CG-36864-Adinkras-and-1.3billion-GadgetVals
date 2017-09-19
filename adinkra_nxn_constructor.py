@@ -21,6 +21,10 @@ def unit_vector(n,i):
 
 # Creates the 24 unsigned permutation matrices from permutation group S4
 def gen_permutations(n):
+	"""
+		Creates the 24 unsigned permutation matrices from permutation
+		group S4
+	"""
 	# bracket_n = list(range(n))
 	perms_list = list(itertools.permutations(range(n), n))
 	ts = [unit_vector(n,i) for i in range(n)]
@@ -34,7 +38,9 @@ def gen_permutations(n):
 
 # Generate all sign permutations of an nxn Identity Matrix
 def gen_signm(n):
-
+	"""
+	Generate all sign permutations for a nxn Identity Matrix
+	"""
 	n 			= int(n)
 	items		= [1] * n
 	sign_mat 	= []
@@ -46,6 +52,9 @@ def gen_signm(n):
 
 # Creates the (384) sign permutation matrices
 def gen_product_matrices(n):
+	"""
+	Creates the sign permutation matrices (384 for 4 4 case) 
+	"""
 	legal_matrices = []
 	# from adinkra_tetrad_calc import gen_signm
 	sign_pmat = gen_signm(n)
