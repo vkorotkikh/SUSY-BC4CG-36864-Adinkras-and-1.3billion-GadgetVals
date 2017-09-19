@@ -2,17 +2,21 @@
 Description: This repository contains the python scripts thatenable the calculation
 of all all unique 36,864 ordered BC4-based Adinkras with four colors, four
 open-nodes and four closed nodes and then calculates the Vij holoraumy matrices
-and the 1,358,954,496 Matrix elements of the Gadget
+and the 1,358,954,496 Matrix elements of the Gadget.
 
 ## Important details
-Developed and tested using Python3 (3.6 as of this update).
+Developed and tested using Python 3 (using Anaconda Python 3.6 as of README update).
 ```
 $ Requires numpy library
-$ Developer/creator tested on Mac OSX.
+$ Developer/creator tested on Mac OSX. Untested for Windows usage.
 ```
 
 ## Getting Started
 To execute this tool, run the following command in Terminal
+```
+$ python -u adinkra_tetrad_calc.py
+```
+or if you have both python 2 and 3, specify python 3 version.
 ```
 $ python3 adinkra_tetrad_calc.py
 ```
@@ -31,5 +35,3 @@ the billion plus matrix elements of the Gadget.
 ## Author
 
 * **Vadim K.** - **
-
-## Acknowledgments
