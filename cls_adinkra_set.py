@@ -19,15 +19,20 @@ def main():
 class AdinkraSet():
 
 	@classmethod
-	def adinkra_clsmethod(cls):
+	def aset_classmethod(cls):
 		print("Class Name: %s" % cls.__name__)
 
-	def __init__(self, dim, nodes):
+	def __init__(self, dim, nodes, adink_list):
 
-		self.dim = dim
-		self.nodes = nodes
+		self.dim 		= dim
+		self.nodes		= nodes
+
+		self.adinkra_list = adink_list
 
 
 	def rand_inst_method(self):		# class instance method
 		# what will this do?
 		return self.dim
+
+	def len_adinkralist(self):
+		return len(self.adinkra_list)
