@@ -7,6 +7,7 @@
 # Description: Algorithm for generating n-colour sized Adinkras of n-node
 # matrix representations
 
+from array import array		# going to try and use this
 from numpy.linalg import inv
 import numpy as np
 import itertools
@@ -53,7 +54,7 @@ def gen_signm(n):
 # Creates the (384) sign permutation matrices
 def gen_product_matrices(n):
 	"""
-	Creates the sign permutation matrices (384 for 4 4 case) 
+	Creates the sign permutation matrices (384 for 4 4 case)
 	"""
 	legal_matrices = []
 	# from adinkra_tetrad_calc import gen_signm
