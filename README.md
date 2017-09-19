@@ -3,6 +3,11 @@ Description: This repository contains the python scripts thatenable the calculat
 of all all unique 36,864 ordered BC4-based Adinkras with four colors, four
 open-nodes and four closed nodes and then calculates the Vij holoraumy matrices
 and the 1,358,954,496 Matrix elements of the Gadget.
+```
+The very first, original version of the code used for calculations in the paper is
+found under original-code brach
+```
+
 
 ## Important details
 Developed and tested using Python 3 (using Anaconda Python 3.6 as of README update).
