@@ -22,7 +22,8 @@ from numpy.linalg import inv
 # ******************************************************************************
 # Function Imports
 import vij_holoraumy_calc
-
+import adinkra_nxn_constructor
+import cls_adinkra_set
 
 # ******************************************************************************
 # Main() function.
@@ -39,14 +40,16 @@ def main():
 	print("#	")
 	print("# ***********************************************************************")
 	print("		")
-	# calculate_wisdom(4)
-	# calc_all_adinkras(4)
+	adinkra_list	= []
+	adinkra_list	= adinkra_nxn_constructor.makeall_adinkras(4,4)
+	print("Length adinkra_list: ", len(adinkra_list))
 
+	cls_adinkra_set.AdinkraSet.aset_classmethod()
+	if len(adinkra_list) > 1:
+		# NewAdink = cls_adinkra_set.AdinkraSet(4,4, adinkra_list)
+		NewAdink = cls_adinkra_set.AdinkraSet(4,4,adinkra_list)
+		print("Len Adinkra Class list: ", NewAdink.len_adinkralist())
 
-def actual_main():
-
-
-	pass
 
 
 # **************************************************************************
