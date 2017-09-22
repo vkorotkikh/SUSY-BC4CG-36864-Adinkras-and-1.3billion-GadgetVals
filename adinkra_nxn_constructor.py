@@ -7,12 +7,10 @@
 # Description: Algorithm for generating n-colour sized Adinkras of n-node
 # matrix representations
 
+import sys, time, itertools
 from array import array		# going to try and use this
 from numpy.linalg import inv
 import numpy as np
-import itertools
-import time
-import sys
 
 # Makes colums/rows that compose an Identity matrix
 def unit_vector(n,i):
@@ -80,10 +78,8 @@ def pairing(matli, matlj):
 
 # Make all Adinkras?
 def make_adinkras(k, legal_matrices):
-	# """
-	# Make all legal good lists of matrices of size k inside legal_matrices
-	# """
-	""" k is the color number of Adinkra, k=4 is a 4 color, 4 L Matrix Adinkra
+	""" Make proper lists of matrices, size = k, using legal_matrices
+		k is the color number of Adinkra, k=4 is a 4 color, 4 L Matrix Adinkra
 		ie a tetrads
 	"""
 	# main_list	= [[] for i in range(len(legal_matrices))]
