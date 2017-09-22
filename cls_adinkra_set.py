@@ -22,6 +22,12 @@ class AdinkraSet():
 	def aset_classmethod(cls):
 		print("Class Name: %s" % cls.__name__)
 
+	@staticmethod
+	def aset_method(tbd_var):
+		print(tbd_var, type(tbd_var))
+
+		# pass
+
 	def __init__(self, dim, nodes, adink_list):
 
 		self.dim 		= dim
