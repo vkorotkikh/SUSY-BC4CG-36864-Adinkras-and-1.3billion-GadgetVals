@@ -52,7 +52,7 @@ def gen_signm(n):
 # Creates the (384) sign permutation matrices
 def gen_product_matrices(n):
 	"""
-	Creates the sign permutation matrices (384 for 4 4 case)
+	Creates the L sign permutation matrices (384 for 4x4 Matrix)
 	"""
 	legal_matrices = []
 	# from adinkra_tetrad_calc import gen_signm
@@ -78,29 +78,25 @@ def pairing(matli, matlj):
 
 # Make all Adinkras?
 def make_adinkras(k, legal_matrices):
-	""" Make proper lists of matrices, size = k, using legal_matrices
-		k is the color number of Adinkra, k=4 is a 4 color, 4 L Matrix Adinkra
-		ie a tetrads
+	""" Make lists of number k matrices (adinkras), using legal_matrices list
+		k is the color number of Adinkra (or size), k=4 is a 4 color, 4 L Matrix
+		Adinkra.
 	"""
 	# main_list	= [[] for i in range(len(legal_matrices))]
 	# print(len(main_list))
-	""" Preallocate lists """
-	xtest_pack	= [None] * 12
-	fourpack	= [None] * 4
+	xtest_pack	= []
+	fourpack	= []
 
 	if k == 1:
 		return [list(l) for l in legal_matrices]
 	else:
 		adinkra_list = []
 		print("Length lmats", len(legal_matrices))
-
 		for i, mat in enumerate(legal_matrices):			# Find all matrix pairs for mat
 			# good_mats = [m for m in legal_matrices if pairing(mat,m)]
-
 			# test_mats = [ind[0] for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]
 			xtest_pack = [ind for ind in enumerate(legal_matrices) if pairing(mat, ind[1])]
 			# main_list[i] = xtest_pack
-
 			for val in xtest_pack:
 				# main_list[val[0]] = [(i,mat)]
 				fourpack	= [nmat for nmat in xtest_pack if pairing(val[1], nmat[1])]
@@ -130,11 +126,3 @@ def makeall_adinkras(k,n):
 	main_tetrad = make_adinkras(k,gen_product_matrices(n))
 
 	return main_tetrad
-
-# ********************************
-# Run main()
-# start_time = time.time()
-#
-# makeall_adinkras(4,4)
-# print("-- Execution time --")
-# print("---- %s seconds ----" % (time.time() - start_time))
