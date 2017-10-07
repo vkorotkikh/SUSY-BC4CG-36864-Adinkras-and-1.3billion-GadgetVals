@@ -26,11 +26,6 @@ import time
 # import matrix_outerprod_calc
 import alpha_beta_4x4
 
-# ******************************************************************************
-# Main() function.
-def main():
-	# gen_signm(4)
-	pass
 
 # ******************************************************************************
 # Do the final Vij calculation

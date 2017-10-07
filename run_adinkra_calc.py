@@ -27,7 +27,7 @@ import cls_adinkra_set
 # ******************************************************************************
 # Main() function.
 def main():
-	print("# ***********************************************************************")
+	print("#>***********************************************************************")
 	print("# Name:    Caculate all BC4-based Adinkras")
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
@@ -37,7 +37,7 @@ def main():
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
 	print("#	")
-	print("# ***********************************************************************")
+	print("#>***********************************************************************")
 	print("		")
 	adinkra_list	= []
 	adinkra_list	= adinkra_nxn_constructor.makeall_adinkras(4,4)
