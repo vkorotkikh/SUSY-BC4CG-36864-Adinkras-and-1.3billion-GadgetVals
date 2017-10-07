@@ -77,7 +77,7 @@ def pairing(matli, matlj):
 	return (np.count_nonzero(rtmat) == 0)
 
 # Make all Adinkras?
-def make_adinkras(k, legal_matrices):
+def adinkra_gen(k, legal_matrices):
 	""" Make lists of number k matrices (adinkras), using legal_matrices list
 		k is the color number of Adinkra (or size), k=4 is a 4 color, 4 L Matrix
 		Adinkra.
@@ -119,10 +119,6 @@ def make_adinkras(k, legal_matrices):
 
 
 # ********************************
-def makeall_adinkras(k,n):
-
-	# print(len(test_list))
-	# return make_matrices(n, gen_product_matrices(n))
-	main_tetrad = make_adinkras(k,gen_product_matrices(n))
-
-	return main_tetrad
+def create_adinkras(k,n):
+	# main_tetrad = adinkra_gen(k,gen_product_matrices(n))
+	return adinkra_gen(k,gen_product_matrices(n))
