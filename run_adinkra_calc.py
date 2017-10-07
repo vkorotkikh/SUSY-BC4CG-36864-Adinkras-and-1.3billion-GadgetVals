@@ -141,33 +141,7 @@ def user_options():
 			else:
 				print("Returning to core options...")
 				option_activator('core')
-
-	# Preset loopcount = 0 if no arg supplied for first time.
-	def option_four(loopcount=0):
-		print("")
-		print(" < 1 >  -  Calculate all P-sets")
-		print(" < 2 >  -  Calculate select P-set from the Small Library")
-		print(" < 3 >  -  Back to main menu")
-		opt_str = input(": ")
-
-		if opt_str.strip() == '1':
-			# for now
-			bc4_validation_organizer('PALL', 'mats', 'boson')
-			pass
-		elif opt_str.strip() == '2':
-			usr_pset = pset_options_std()
-			bc4_validation_organizer(usr_pset, 'mats', 'boson')
-		elif opt_str.strip() == '3':
-			option_activator('core')
-		else:
-			loopcount += 1
-			print("Unrecognized option")
-			if loopcount <= 5:
-				option_four(loopcount)
-			else:
-				print("Returning to core options...")
-				option_activator('core')
-			# print("How do I go back one?")
+				
 
 	def option_five():
 		print("NOT ACTIVATED (code not finished)")

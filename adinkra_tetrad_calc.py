@@ -34,19 +34,18 @@ def main():
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
 	print("# Date:    December 2016		")
-	print("# Version: 1.3A				")
+	print("# Version: 1.#A				")
 	print("#							")
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
 	print("#	")
 	print("# ***********************************************************************")
 	print("		")
-	calculate_wisdom(4)
-	# calc_all_adinkras(4)
+	calc_all_adinkras(4)
 
 # ******************************************************************************
 # Calculate all possible Adinkra (L matrix tetrads) in BC4 space
-def calculate_wisdom(n):
+def calc_all_adinkras(n):
 
 	""" Main tetrad list """
 	numonly_tetrads = []
