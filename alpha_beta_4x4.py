@@ -39,28 +39,8 @@ def illuminator_of_elfes():
 	beta1i = np.matrix([[0, 0, 0, 2], [0, 0, -2, 0], [0, 2, 0, 0], [-2, 0, 0, 0]])
 	beta2i = np.matrix([[0, 0, 2, 0], [0, 0, 0, 2], [-2, 0, 0, 0], [0, -2, 0, 0]])
 	beta3i = np.matrix([[0, 2, 0, 0], [-2, 0, 0, 0], [0, 0, 0, -2], [0, 0, 2, 0]])
-
-	# print("alpha 1")
-	# print(alpha1i)
-	# print("")
-	# print("alpha 2")
-	# print(alpha2i)
-	# print("")
-	# print("alpha 3")
-	# print(alpha3i)
-	# print("")
-	# print("beta 1")
-	# print(beta1i)
-	# print("")
-	# print("beta 2")
-	# print(beta2i)
-	# print("")
-	# print("beta 3")
-	# print(beta3i)
-	# print("")
-
-	abperm_comb = [alpha1i, alpha2i, alpha3i, beta1i, beta2i, beta3i]
-	return abperm_comb
+	
+	return [alpha1i, alpha2i, alpha3i, beta1i, beta2i, beta3i]
 
 
 # ******************************************************************************
