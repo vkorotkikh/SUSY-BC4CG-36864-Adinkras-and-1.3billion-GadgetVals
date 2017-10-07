@@ -11,7 +11,6 @@
 #
 # ******************************************************************************
 
-# ******************************************************************************
 # Library Imports
 import sys, time, math, itertools
 import numpy as np
@@ -33,7 +32,7 @@ def main():
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
 	print("# Date:    December 2016		")
-	print("# Version: Updated to 2.0 Sept 2017")
+	print("# Version: 2.0 Update in Progress Sept 2017")
 	print("#							")
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
@@ -222,12 +221,6 @@ def user_options():
 
 	uinput = core_options()
 	option_activator(uinput)
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
