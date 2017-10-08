@@ -36,9 +36,9 @@ class AdinkraSet():
 		self.adinkra_list = adink_list
 
 
-	def rand_inst_method(self):		# class instance method
+	def ret_adinkras(self):		# class instance method
 		# what will this do?
-		return self.dim
+		return self.adinkra_list
 
-	def len_adinkralist(self):
+	def get_len_adinkra(self):
 		return len(self.adinkra_list)

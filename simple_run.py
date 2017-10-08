@@ -35,7 +35,7 @@ def main():
 	if len(adinkra_list) > 1:
 		# NewAdink = cls_adinkra_set.AdinkraSet(4,4, adinkra_list)
 		NewAdink = cls_adinkra_set.AdinkraSet(4,4,adinkra_list)
-		print("Len Adinkra Class list: ", NewAdink.len_adinkralist())
+		print("Len Adinkra Class list: ", NewAdink.get_len_adinkra())
 
 
 if __name__ == "__main__":
