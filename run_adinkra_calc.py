@@ -32,7 +32,7 @@ def main():
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
 	print("# Date:    December 2016		")
-	print("# Version: 2.0 Update in Progress Sept 2017")
+	print("# Version: 2.0 Update in Progress Jan 2018")
 	print("#							")
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
@@ -47,7 +47,7 @@ def main():
 	if len(adinkra_list) > 1:
 		# NewAdink = cls_adinkra_set.AdinkraSet(4,4, adinkra_list)
 		NewAdink = cls_adinkra_set.AdinkraSet(4,4,adinkra_list)
-		print("Len Adinkra Class list: ", NewAdink.len_adinkralist())
+		print("Len Adinkra Class list: ", NewAdink.get_len_adinkra())
 
 
 
@@ -62,7 +62,7 @@ def user_options():
 		print("")
 		print(" < 1 >  -  Calculate all BC4 Adinkras")
 		print(" < 2 >  -  Calculate BC4 Adinkras Gadget I values")
-		print(" < 3 >  -  Calculate BC4 Adinkras Gadget II values")
+		# print(" < 3 >  -  Calculate BC4 Adinkras Gadget II values")
 		# print(" < 4 >  -  Calculate P-set Bosonic Matrices")
 		# print(" < 5 >  -  Set output file string")
 		print(" < 4 >  =  Nevermind. Get me outa here! Exit")
@@ -141,7 +141,7 @@ def user_options():
 			else:
 				print("Returning to core options...")
 				option_activator('core')
-				
+
 
 	def option_five():
 		print("NOT ACTIVATED (code not finished)")

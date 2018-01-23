@@ -69,7 +69,7 @@ def calc_all_adinkras(n):
 		for y in uperm_mat:
 			t2 = np.asmatrix(y)
 			dprod = np.dot(t1,t2)
-			dprod2 = np.matmul(t1,t2)
+			dprod2 = np.dot(t1,t2)
 			if np.array_equal(dprod, dprod2):
 				res.append(dprod)
 				# if duplik_one:
