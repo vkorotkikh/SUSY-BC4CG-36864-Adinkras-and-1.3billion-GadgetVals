@@ -32,7 +32,8 @@ def main():
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
 	print("# Date:    December 2016		")
-	print("# Version: 2.0 Update in Progress Jan 2018")
+	print("# Version: 2.0 Upd\
+	\ate in Progress Jan 2018")
 	print("#							")
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
@@ -41,7 +42,7 @@ def main():
 	print("		")
 	adinkra_list	= []
 	adinkra_list	= adinkra_nxn_constructor.create_adinkras(4,4)
-	print("Length adinkra_list: ", len(adinkra_list))
+	print("Length adinkra_list: %s" % (len(adinkra_list)))
 
 	if adinkra_list:
 		# NewAdink = cls_adinkra_set.AdinkraSet(4,4, adinkra_list)

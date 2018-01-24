@@ -56,7 +56,7 @@ def calculate_vij_matrices(main_tetrad_list):
 			print("# ********************************")
 			print("								     ")
 			print("Tetrad i: ", ti)
-			
+
 		temp_combos = []
 		alpha_temp	= []
 		beta_temp   = []
@@ -160,8 +160,8 @@ def calculate_vij_matrices(main_tetrad_list):
 		else:
 			print(mvals)
 
-	print("Length Vij alphas tetrads:", len(vij_alphas))
-	print("length Vij beta tetrads:", len(vij_betas))
+	print("Length Vij alphas tetrads: %d" % (len(vij_alphas)))
+	print("length Vij beta tetrads: %d" % (len(vij_betas)))
 
 	gadget_vals		= []
 	one_count 		= 0
@@ -261,10 +261,10 @@ def calculate_vij_matrices(main_tetrad_list):
 					print("ERROR**********")
 					print(ijf)
 					print(ijx)
-			print("zero count", zero_count)
-			print(" 1/3 count", ptre_count)
-			print("-1/3 count", ntre_count)
-			print("  1  count", one_count)
+			print("zero count %d " % (zero_count))
+			print(" 1/3 count %d " % (ptre_count))
+			print("-1/3 count %d " % (ntre_count))
+			print("  1  count %d " % (one_count))
 			print(gadget_vals)
 	else:
 		pass
@@ -272,8 +272,8 @@ def calculate_vij_matrices(main_tetrad_list):
 	print("################################################")
 	print(" Printing final Gadget values and counts        ")
 	print("							")
-	print("zero count", zero_count)
-	print(" 1/3 count", ptre_count)
-	print("-1/3 count", ntre_count)
-	print("  1  count", one_count)
+	print("zero count %d " % (zero_count))
+	print(" 1/3 count %d " % (ptre_count))
+	print("-1/3 count %d " % (ntre_count))
+	print("  1  count %d " % (one_count))
 	print(gadget_vals)
