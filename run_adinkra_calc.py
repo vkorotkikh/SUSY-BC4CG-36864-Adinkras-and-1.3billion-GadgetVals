@@ -43,11 +43,10 @@ def main():
 	adinkra_list	= adinkra_nxn_constructor.create_adinkras(4,4)
 	print("Length adinkra_list: ", len(adinkra_list))
 
-	# cls_adinkra_set.AdinkraSet.aset_classmethod()
-	if len(adinkra_list) > 1:
+	if adinkra_list:
 		# NewAdink = cls_adinkra_set.AdinkraSet(4,4, adinkra_list)
 		NewAdink = cls_adinkra_set.AdinkraSet(4,4,adinkra_list)
-		print("Len Adinkra Class list: ", NewAdink.get_len_adinkra())
+		vij_holoraumy_calc.calculate_vij_matrices(adinkra_list)
 
 
 

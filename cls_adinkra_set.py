@@ -11,11 +11,8 @@
 #
 # ******************************************************************************
 
-def main():
-	pass
 
-
-
+#>******************************************************************************
 class AdinkraSet():
 
 	@classmethod
@@ -27,18 +24,13 @@ class AdinkraSet():
 		print(tbd_var, type(tbd_var))
 
 		# pass
-
+	#>**************************************************************************
 	def __init__(self, dim, nodes, adink_list):
 
 		self.dim 		= dim
 		self.nodes		= nodes
+		self.adinkras	= adink_list
 
-		self.adinkra_list = adink_list
-
-
+	#>**************************************************************************
 	def ret_adinkras(self):		# class instance method
-		# what will this do?
-		return self.adinkra_list
-
-	def get_len_adinkra(self):
-		return len(self.adinkra_list)
+		return self.adinkras

@@ -56,12 +56,7 @@ def calculate_vij_matrices(main_tetrad_list):
 			print("# ********************************")
 			print("								     ")
 			print("Tetrad i: ", ti)
-			# print(teti[0][1][0,:], teti[1][1][0,:], teti[2][1][0,:], teti[3][1][0,:])
-			# print(teti[0][1][1,:], teti[1][1][1,:], teti[2][1][1,:], teti[3][1][1,:])
-			# print(teti[0][1][2,:], teti[1][1][2,:], teti[2][1][2,:], teti[3][1][2,:])
-			# print(teti[0][1][3,:], teti[1][1][3,:], teti[2][1][3,:], teti[3][1][3,:])
-			print("								     ")
-
+			
 		temp_combos = []
 		alpha_temp	= []
 		beta_temp   = []
