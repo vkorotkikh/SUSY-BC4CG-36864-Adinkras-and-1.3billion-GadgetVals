@@ -32,8 +32,7 @@ def main():
 	print("# Author:  Vadim Korotkikh	")
 	print("# Email:   va.korotki@gmail.com")
 	print("# Date:    December 2016		")
-	print("# Version: 2.0 Upd\
-	\ate in Progress Jan 2018")
+	print("# Version: 2.0 Update in Progress Jan 2018")
 	print("#							")
 	print("# Description: Calculates all unique 36,864 ordered BC4-based adinkras")
 	print("# with four colors, four open-nodes and four closed nodes.             ")
